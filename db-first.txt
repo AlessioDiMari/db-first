@@ -1,29 +1,32 @@
 TABELLA MACCHINA:
 
-    id_concessionario: MEDIUMINT, PK
-    vin: VARCHAR(17), PK
+    id_macchina: MEDIUMINT, PK
+    vin: VARCHAR(17), NULL
     marca: VARCHAR(20), NOTNULL
     modello: VARCHAR, NOTNULL
-    targa_corrente: VARCHAR(7), UNIQUE NOTNULL
-    alimentazione: VARCHAR(20), NOTNULL
-    anno_immatricolazione: DATE, NOTNULL
+    targa_corrente: VARCHAR(7), UNIQUE, NULL
+    alimentazione: VARCHAR(20), NULL
+    anno_immatricolazione: DATE, NULL
     colore: VARCHAR(20), NULL
-    chilometri_fatti: SMALLINT, NOTNULL
-    numero_porte: SMALLINT, NOTNULL
+    chilometri_fatti: SMALLINT, NULL
+    numero_porte: SMALLINT, NULL
     prezzo: FLOAT(6,2), NOTNULL
-    mano: TINYINT, NOTNULL
-    cambio: VARCHAR(16), NOTNULL
-    tipologia: VARCHAR(20), NOTNULL
-    velocità_massima: SMALLINT, NOTNULL
-    cilindrata: SMALLINT, NOTNULL
-    potenza_massina: SMALLINT, NOTNULL
-    numero_posti: TINYINT, NOTNULL
-    carrozzeria: VARCHAR(20), NOTNULL
+    mano: TINYINT, NULL
+    cambio: VARCHAR(16), NULL
+    tipologia: VARCHAR(20), NULL
+    velocità_massima: SMALLINT, NULL
+    cilindrata: SMALLINT, NULL
+    potenza_massina: SMALLINT, NULL
+    numero_posti: TINYINT, NULL
+    carrozzeria: VARCHAR(20), NULL
     paese: VARCHAR(2), NOTNULL
-    dotazioni: (far riferimento alla TABELLA DOTAZIONI)
+    dotazioni: SMALLINT, NULL( "id_dotazioni" )
 
-    TABELLA DOTAZIONI ( TINYINT, NOTNULL ):
+    TABELLA DOTAZIONI:
 
+        id_dotazioni: SMALLINT, PK
+
+        ( TINYINT( 0 || 1 ), NULL ) =>
         abs:
         aibag:
         airbag_laterali:
