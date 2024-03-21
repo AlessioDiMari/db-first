@@ -1,0 +1,54 @@
+TABELLA MACCHINA:
+
+    id_concessionario: MEDIUMINT, PK
+    vin: VARCHAR(17), PK
+    marca: VARCHAR(20), NOTNULL
+    modello: VARCHAR, NOTNULL
+    targa_corrente: VARCHAR(7), UNIQUE NOTNULL
+    alimentazione: VARCHAR(20), NOTNULL
+    anno_immatricolazione: DATE, NOTNULL
+    colore: VARCHAR(20), NULL
+    chilometri_fatti: SMALLINT, NOTNULL
+    numero_porte: SMALLINT, NOTNULL
+    prezzo: FLOAT(6,2), NOTNULL
+    mano: TINYINT, NOTNULL
+    cambio: VARCHAR(16), NOTNULL
+    tipologia: VARCHAR(20), NOTNULL
+    velocità_massima: SMALLINT, NOTNULL
+    cilindrata: SMALLINT, NOTNULL
+    potenza_massina: SMALLINT, NOTNULL
+    numero_posti: TINYINT, NOTNULL
+    carrozzeria: VARCHAR(20), NOTNULL
+    paese: VARCHAR(2), NOTNULL
+    dotazioni: (far riferimento alla TABELLA DOTAZIONI)
+
+    TABELLA DOTAZIONI ( TINYINT, NOTNULL ):
+
+        abs:
+        aibag:
+        airbag_laterali:
+        antifurto:
+        aria_condizionarta:
+        adaptive_cruise_control:
+        bluetooth:
+        computer_bordo:
+        fari_led:
+        fari_xenon:
+        fendinebbia:
+        portapacchi:
+        sedili_riscaldati:
+        spoiler:
+        usb:
+        vivavoce:
+        vetri_oscurati:
+        tettuccio_apribile:
+        tettuccio_panoramico:
+        sospenzioni_pneumatiche:
+        sospenzioni_sportive:
+        sistema_parcheggio_automatico:
+        sistema_riconoscimento_stanchezza:
+        servosterzo:
+        sensori_parcheggio_anteriori:
+        sensori_parcheggio_posteriori:
+        guida_destra:
+        fari_direzionali:
